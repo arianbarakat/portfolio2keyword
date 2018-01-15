@@ -21,14 +21,14 @@ The following python modules have been used in the implementation of the algorit
 ____
 
 
-## p2k Description
+## P2k Arguments
 
 The algorithm takes three arguments:
 
 * portfolio
     + The corpus as an python list
 * stopwords
-    + A python set of stopwords (optional). If not provided, the function algorithm will use the standard set from the nltk module.
+    + A python set of stopwords (optional). If not provided, the function algorithm will use the standard set of stopwords from the nltk module.
 * tags
     + A python set of Part-of-Speech (POS) tags. Default is None, used if the user only wants to include keywords of a certain word-type.
     
@@ -50,7 +50,7 @@ stopwords = set(nltk.corpus.stopwords.words('english'))
 pos_tags = set(['NOUN', 'VERB', 'ADJ'])
 ```
 
-Alternatively, the user can choose to extend the set of stopwords by adding domain-specif stopwords the _union_ method.
+Alternatively, the user can choose to extend the set of stopwords by adding domain-specif stopwords using the _union_ method.
 
 
 ```python
