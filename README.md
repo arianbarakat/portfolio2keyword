@@ -1,7 +1,7 @@
 
 # Portfolio2Keyword
 
-*Portfolio2Keyword* (p2k) is an algorithm written in python for automatic keyword extraction from a collection of documents and was developed for the project in the text mining course (732A92) at Linköping University. The goal of the algorithm is to provide users with a simple and interactive tool with the intention to aid the user in the process information retrieval. The algorithm is by no means a complete toolset but can nonetheless introduce time-savings and valuable insights to the user.  
+*Portfolio2Keyword* (p2k) is an algorithm written in python for automatic keyword extraction from a collection of documents and was developed for the project in the text mining course (732A92) at Linköping University. The goal of the algorithm is to provide users with a simple and interactive tool with the intention to aid the user in the process of information retrieval. The algorithm is by no means a complete toolset but can nonetheless introduce time-savings and valuable insights to the user.  
 
 P2k also introduce an eﬃcient ranking algorithm that, despite its simplicity, extracts semantic coherent keywords to be used as building blocks for future queries. The proposed algorithm is compared to the widely used PageRank algorithm
   
