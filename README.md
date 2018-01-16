@@ -12,28 +12,47 @@ For a detailed description of the algorithm, read the project [report]()
 
 The following python modules have been used in the implementation of the algorithm
 
-* networkx
-* nltk
-* scipy.stats
-* spacy
-* operator
+```
+nltk 3.2.2
+networkx 2.0
+spacy 2.0.5
+scipy.stats 1.0.0
+operator
+
+
+```
+
+You may also need to download certain module dependent assets
+
+```bash
+
+python -m spacy download en
+python -m nltk.downloader stopwords
+
+```
 
 ____
 
 
-## P2k Arguments
+## Portfolio2Keyword Usage
 
-The algorithm takes three arguments:
+### Arguments
 
-* portfolio
-    + The corpus as an python list
-* stopwords
-    + A python set of stopwords (optional). If not provided, the function algorithm will use the standard set of stopwords from the nltk module.
-* tags
-    + A python set of Part-of-Speech (POS) tags. Default is None, used if the user only wants to include keywords of a certain word-type.
+The p2k algorithm takes three arguments:
+
+```
+portfolio:
+            The corpus represented as a python list
+stopwords:
+            A python set of stopwords (optional). If not provided, the function 
+            algorithm will use the standard set of stopwords from the nltk module.
+tags:
+            A python set of Part-of-Speech (POS) tags. Default is None, used if 
+            the user only wants to include keywords of a certain word-type`
+```
     
     
-## Example Run
+## Example
 
 In the following example, the algorithm will be run in two setups for demonstrating the use of POS-tags.
 
@@ -57,14 +76,16 @@ Alternatively, the user can choose to extend the set of stopwords by adding doma
 stopwords = stopwords.union(set('hello'))
 ```
 
-The portfolio can consist of strings of any sort, ranging from simple sentences to full-text documents. In this example, we will use the following texts:
+The portfolio can consist of text strings of any sort, ranging from simple sentences to full-text documents. 
+
+In this example, we will use the following texts:
 
 > “Text mining, also referred to as text data mining, roughly equivalent to text analytics, is the process of deriving high-quality information from text.”
 
 
 ---
 
-### Initialization and Keyword Ranking
+### Initialization 
 
 
 ```python
@@ -79,7 +100,9 @@ portfolio_posSubset = p2k.portfolio2keyword(portfolio, stopwords= stopwords, tag
 
 __Summary:__  
 
-Followed by this, the user can extract some useful summary to get some useful insights. In this case, we can see that by using a subset of POS-tags we avoid generating two additional candidate keywords.
+The user can also extract some useful summary to get some useful insights using the *get_summary()* method. 
+
+In this example, we can see that by using a subset of POS-tags we avoid generating two additional candidate keywords.
 
 
 ```python
@@ -99,9 +122,11 @@ portfolio_posSubset.get_summary()
     Number of Documents 1
 
 
-__Extracting Keywords:__
+### Ranking and Keywords Extraction
 
-The next step is to extract relevant keywords using a ranking algorithm of choice. The two ranking algorithms included in p2k are, as of this moments, the PageRank and HarmonicRank algorithm.
+The extraction of relevant keywords can be done using a ranking algorithm of choice. 
+
+The two ranking algorithms included in p2k are, as of this moments, the PageRank and the HarmonicRank algorithm.
 
 
 ```python
@@ -163,7 +188,7 @@ for i in range(8):
 
 ### Algorithm Interaction
 
-The P2K algorithm also allows for user interaction through the following methods
+The P2K algorithm also allows users for interaction through the following methods
 
 * getNeighbor()
 * remove_nodes()
